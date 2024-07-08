@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+body.dark{
+    background: #232c35;
+}
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+.label{
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+}
+.label .ball{
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2 linear;
+}
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+.fa-moon{
+    color: #f1c40f;
+}
+.fa-sun{
+    color: #f39c12;
+}
+.menu{
+    padding: 30px;
+    position: relative;
+}
+button{
+    width: 40px;
+    height: 45px;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+.linha{
+    width: 25px;
+    height: 3px;
+    background-color: #ccc;
+    display: block;
+    margin: 3px auto;
+    position: relative;
+    transform-origin: center;
+    transition: 0.2s;
+}
+button.ativar{
+    border: 4px solid red;
+}
+button.ativar .linha:nth-child(1){
+    transform: translateY(6px) rotate(-45deg);
+    background-color: red;
+}
+button.ativar .linha:nth-child(3){
+    transform: translateY(-6px) rotate(45deg);
+    background-color: red;
+}
+button.ativar .linha:nth-child(2){
+   width: 0;
+}
